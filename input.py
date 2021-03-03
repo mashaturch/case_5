@@ -1,1 +1,0 @@
-https://www.nfl.com/players/jimmy-garoppolo/stats/
