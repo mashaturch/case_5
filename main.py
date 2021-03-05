@@ -1,9 +1,9 @@
-"""Case-study #4 Парсинг web-страниц
+"""Case-study #5 Парсинг web-страниц
 Разработчики:
-Турчинович М., Зубарева Т., Костылев М.
-"""
+Турчинович М. 1000000%, Зубарева Т. 0.1%, Костылев М. -100
 import urllib.request
 
+#opening file
 with open ('input.txt') as f_in:
     with open ('output.txt', 'w') as f_out:
         for line in f_in:
@@ -18,36 +18,42 @@ with open ('input.txt') as f_in:
             str_1 = text[total: end_str]
             str_1 = str_1.replace('</th>', ' ')
 
+            #counting comp index
             name_comp = '<th aria-label="passingCompletions" scope="col">'
             part_comp = str_1.find(name_comp) + len(name_comp) + 3
             while str_1[part_comp] != ' ':
                 part_comp += 1
             comp = int(str_1[part_comp: str_1.find('n', part_comp) - 1])
 
+            #counting att index
             name_att = '<th aria-label="passingAttempts" scope="col">'
             part_att = str_1.find(name_att) + len(name_att) + 3
             while str_1[part_att] != ' ':
                 part_att += 1
             att = int(str_1[part_att: str_1.find('n', part_att) - 1])
 
+            #counting yds index
             name_yds = '<th aria-label="passingYards" scope="col">'
             part_yds = str_1.find(name_yds) + len(name_yds) + 3
             while str_1[part_yds] != ' ':
                 part_yds += 1
             yds = int(str_1[part_yds: str_1.find('n', part_yds) - 1])
 
+            #counting td index
             name_td = '<th aria-label="passingTouchdowns" scope="col"'
             part_td = str_1.find(name_td) + len(name_td) + 3
             while str_1[part_td] != ' ':
                 part_td += 1
             td = int(str_1[part_td: str_1.find('n', part_td) - 1])
 
+            #counting int index
             name_int = '<th aria-label="passingInterceptions" scope="col">'
             part_int = str_1.find(name_int) + len(name_int) + 3
             while str_1[part_int] != ' ':
                 part_int += 1
             int_1 = int(str_1[part_int: str_1.find('n', part_int) - 1])
 
+            #counting passing rate index
             name_rate = '<th aria-label="passingPasserRating" scope="col">'
             part_rate = str_1.find(name_rate) + len(name_rate) + 3
             while str_1[part_rate] != ' ':
