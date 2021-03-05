@@ -1,6 +1,7 @@
 """Case-study #5 Парсинг web-страниц
 Разработчики:
-Турчинович М. 1000000%, Зубарева Т. 0.1%, Костылев М. -100
+Турчинович М. 1000000%, Зубарева Т. 0.1%, Костылев М.
+"""
 import urllib.request
 
 #opening file
@@ -60,8 +61,3 @@ with open ('input.txt') as f_in:
                 part_rate += 1
             rate = float(str_1[part_rate: str_1.find('n', part_rate) - 1])
             print('{:<20s}{:<7d}{:<7d}{:<7d}{:<7d}{:<7d}{:<7.2f}'.format(name, comp, att, yds, td, int_1, rate), file = f_out)
-
-
-
-
-
